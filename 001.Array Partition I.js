@@ -1,6 +1,6 @@
 /**
  * 001.Array Partition I-561
- * 001.Given an array of 2n integers, your task is to group these integers into n pairs of integer, 
+ * Given an array of 2n integers, your task is to group these integers into n pairs of integer, 
  * say (a1, b1), (a2, b2), ..., (an, bn) which makes sum of min(ai, bi) for all i from 1 to n as large as possible.
  * 
  * Example 1:
@@ -27,5 +27,4 @@ function showAnswer() {
 	}
 	return sum;
 }
-console.log(outputArray);
 console.log(showAnswer());
