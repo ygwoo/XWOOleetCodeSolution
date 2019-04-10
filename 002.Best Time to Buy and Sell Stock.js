@@ -14,17 +14,21 @@
  * In this case, no transaction is done, i.e. max profit = 0.
  */
 
-var inputStock = [8, 99, 6, 5, 3, 22];
-var minPrice = inputStock[0],
-    maxPrice = 0;
+var maxProfit = function (prices) {
+    var difArr = new Array();
+    var minPrice = Number.MAX_SAFE_INTEGER,
+        maxPrice = 0;
 
-for (var i = 0; i < inputStock.length; i++) {
-    if (minPrice <= inputStock[i]) {
-        minPrice = inputStock[i];
-    } else {
-        maxPrice = Math.max(maxPrice, inputStock[i] - minPrice);
+    for (var i = 0; i < prices.length; i++) {
+        if (minPrice >= prices[i]) {
+            minPrice = prices[i];
+        } else {
+            difArr.push(Math.max(maxPrice, prices[i] - minPrice));
+        }
     }
+    maxPrice = Math.max.apply(Math, difArr) == "-Infinity" ? 0 : Math.max.apply(Math, difArr);
+    return maxPrice;
+};
 
-}
-
-console.log(maxPrice);
+var inputStock = [22, 1, 2, 3, 4, 5, 12, 0, 1, 1, 1, 2, 3, 4, 5, 6];
+console.log(maxProfit(inputStock));

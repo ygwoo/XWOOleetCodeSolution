@@ -1,5 +1,5 @@
 /**
- * 003.A + B Problem-1
+ * 003.A + B Problem
  * Write a function that add two numbers A and B. You should not use + or any arithmetic operators.
  * 
  * Example:
@@ -14,4 +14,4 @@ const aplusb = function (a, b) {
     return aplusb(sum, ca);
 }
 
-console.log(aplusb(10,10));
+console.log(aplusb(5,10));
